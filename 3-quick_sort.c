@@ -37,10 +37,10 @@ int lomuto_partition_scheme(int array[], size_t size, int low, int high)
 			if (i != j)
 			{
 			integer_swapper(&array[i], &array[j]);
-			print_array(array, size);
 			}
 		}
 	}
+	print_array(array, size);
 	i++;
 	if (i != high)
 	{
