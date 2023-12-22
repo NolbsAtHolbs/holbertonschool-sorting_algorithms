@@ -5,13 +5,15 @@
 * @first: first element to swap
 * @second: second element to swap
 */
-void integer_swapper(int *first, int *second)
+void integer_swapper(int *first, int *second, int *array, size_t size)
 {
 	int temp;
 
 	temp = *first;
 	*first = *second;
 	*second = temp;
+
+	print_array(array, size);
 }
 
 /**
@@ -34,16 +36,18 @@ int lomuto_partition_scheme(int array[], size_t size, int low, int high)
 		if (array[j] < pivot)
 		{
 			i++;
+
 			if (i != j)
 			{
-			integer_swapper(&array[i], &array[j]);
+				integer_swapper(&array[i], &array[j], array, size);
 			}
 		}
 	}
 	i++;
+
 	if (i != high)
 	{
-		integer_swapper(&array[i], &array[high]);
+		integer_swapper(&array[i], &array[high], array, size);
 	}
 	if (i == high && array[i] == pivot)
 	{
