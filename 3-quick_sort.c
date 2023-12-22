@@ -61,6 +61,8 @@ int lomuto_partition_scheme(int array[], size_t size, int low, int high)
 */
 void quick_sort(int *array, size_t size)
 {
+	size_t i;
+
 	if (size <= 1)
 	{
 		return;
@@ -69,5 +71,17 @@ void quick_sort(int *array, size_t size)
 	{
 		integer_swapper(&array[0], &array[1]);
 	}
+	for (i = 0; i < size - 1; i++)
+	{
+		if (array[i] > array[i + 1])
+		{
+			break;
+		}
+	}
+	if (i == size - 1)
+	{
+		return;
+	}
+
 	lomuto_partition_scheme(array, size, 0, size - 1);
 }
