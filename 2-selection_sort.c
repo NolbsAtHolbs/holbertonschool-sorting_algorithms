@@ -3,7 +3,7 @@
 /**
 * selection_sort - sorts an array of integers in ascending order using the
 * selection sort algorithm
-* 
+*
 * @array: array to be sorted
 * @size: size of array
 */
