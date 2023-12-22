@@ -8,6 +8,7 @@
 void integer_swapper(int *first, int *second)
 {
 	int temp;
+
 	temp = *first;
 	*first = *second;
 	*second = temp;
@@ -17,6 +18,7 @@ void integer_swapper(int *first, int *second)
 * lomuto_partition_scheme - pivot is always the last element of the
 *  array being partitioned
 * @array: array to partition
+* @size: size of array
 * @low: lowest integer in array
 * @high: highest integer in array
 * Return: index where partition ended up
