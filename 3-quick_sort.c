@@ -21,7 +21,7 @@ void integer_swapper(int *first, int *second)
 * @size: size of array
 * @low: lowest integer in array
 * @high: highest integer in array
-* Return: index where partition ended up
+* Return: index where partition lands
 */
 int lomuto_partition_scheme(int array[], size_t size, int low, int high)
 {
@@ -34,12 +34,23 @@ int lomuto_partition_scheme(int array[], size_t size, int low, int high)
 		if (array[j] < pivot)
 		{
 			i++;
+			if (i != j)
+			{
 			integer_swapper(&array[i], &array[j]);
+			}
 		}
 	}
+	i++;
+	if (i != high)
+	{
+		integer_swapper(&array[i], &array[high]);
+	}
+	if (i == high && array[i] == pivot)
+	{
+		return (i);
+	}
 	print_array(array, size);
-	integer_swapper(&array[i + 1], &array[high]);
-	return (i + 1);
+	return (i);
 }
 
 /**
