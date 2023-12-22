@@ -84,7 +84,7 @@ void quick_sort(int *array, size_t size)
 	}
 	if (size == 2 && array[0] > array[1])
 	{
-		integer_swapper(&array[0], &array[1]);
+		integer_swapper(&array[0], &array[1], array, size);
 	}
 	lomuto_partition_scheme(array, size, 0, size - 1);
 }
