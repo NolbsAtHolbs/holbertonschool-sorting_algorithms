@@ -5,15 +5,13 @@
 * @first: first element to swap
 * @second: second element to swap
 */
-void integer_swapper(int *first, int *second, int *array, size_t size)
+void integer_swapper(int *first, int *second)
 {
 	int temp;
 
 	temp = *first;
 	*first = *second;
 	*second = temp;
-
-	print_array(array, size);
 }
 
 /**
@@ -36,18 +34,16 @@ int lomuto_partition_scheme(int array[], size_t size, int low, int high)
 		if (array[j] < pivot)
 		{
 			i++;
-
 			if (i != j)
 			{
-				integer_swapper(&array[i], &array[j], array, size);
+			integer_swapper(&array[i], &array[j]);
 			}
 		}
 	}
 	i++;
-
 	if (i != high)
 	{
-		integer_swapper(&array[i], &array[high], array, size);
+		integer_swapper(&array[i], &array[high]);
 	}
 	if (i == high && array[i] == pivot)
 	{
@@ -84,7 +80,7 @@ void quick_sort(int *array, size_t size)
 	}
 	if (size == 2 && array[0] > array[1])
 	{
-		integer_swapper(&array[0], &array[1], array, size);
+		integer_swapper(&array[0], &array[1]);
 	}
 	lomuto_partition_scheme(array, size, 0, size - 1);
 }
