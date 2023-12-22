@@ -40,11 +40,11 @@ int lomuto_partition_scheme(int array[], size_t size, int low, int high)
 			}
 		}
 	}
-	print_array(array, size);
 	i++;
 	if (i != high)
 	{
 		integer_swapper(&array[i], &array[high]);
+		print_array(array, size);
 	}
 	if (i == high && array[i] == pivot)
 	{
