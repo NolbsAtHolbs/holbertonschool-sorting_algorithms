@@ -47,9 +47,8 @@ int lomuto_partition_scheme(int array[], size_t size, int low, int high)
 	}
 	if (i == high && array[i] == pivot)
 	{
-		return (i);
+		print_array(array, size);
 	}
-	print_array(array, size);
 	return (i);
 }
 
