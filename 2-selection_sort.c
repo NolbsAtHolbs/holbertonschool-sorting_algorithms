@@ -30,7 +30,6 @@ void selection_sort(int *array, size_t size)
 			temp = array[i];
 			array[i] = array[mindex];
 			array[mindex] = temp;
-			printf(" ");
 
 			for (j = 0; j < size; j++)
 			{
